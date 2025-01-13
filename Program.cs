@@ -1,4 +1,5 @@
 using Orleans.Runtime;
+using OrleansURLShortener.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +23,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/", () => "Hello World!").WithOpenApi();
-// .WithName("GetWeatherForecast") before --> .WithOpenApi()
+app.MapGet("/", () => "Hello World!")
+    .WithName("Home")
+    .WithOpenApi();
 
 app.Run();
