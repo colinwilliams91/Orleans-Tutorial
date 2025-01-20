@@ -1,5 +1,5 @@
 ﻿using OrleansURLShortener.Interfaces;
-using OrleansURLShortener.Modelsl;
+using OrleansURLShortener.Models;
 
 namespace OrleansURLShortener.Grains;
 

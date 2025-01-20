@@ -1,4 +1,4 @@
-﻿namespace OrleansURLShortener.Modelsl;
+﻿namespace OrleansURLShortener.Models;
 
 [GenerateSerializer, Alias(nameof(UrlDetails))]
 public sealed record class UrlDetails
