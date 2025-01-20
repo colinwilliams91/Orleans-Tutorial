@@ -2,7 +2,6 @@
 
 namespace OrleansURLShortener.Extensions;
 
-// TODO: this could be refactored to 3 (or n methods...) and all called inside the Router class CTOR or 1 "CRUDMapper method"
 public static class EndpointRouteBuilderExtensions
 {
     /// <summary>
@@ -10,12 +9,26 @@ public static class EndpointRouteBuilderExtensions
     /// </summary>
     public static void MapGetEndpoints(this IEndpointRouteBuilder builder)
     {
-        /// Home - landing screen endpoint
+        MapGetHome(builder);
+        MapGetShorten(builder);
+        MapGetGo(builder);
+    }
+
+    /// <summary>
+    /// Home - landing screen endpoint
+    /// </summary>
+    public static void MapGetHome(this IEndpointRouteBuilder builder)
+    {
         builder.MapGet("/", static () => "URL Shortener powered by Orleans.")
             .WithName("Home")
             .WithOpenApi();
+    }
 
-        /// Shorten - creates and stores version of provided URL
+    /// <summary>
+    /// Shorten - creates and stores version of provided URL
+    /// </summary>
+    public static void MapGetShorten(this IEndpointRouteBuilder builder)
+    {
         builder.MapGet("/shorten",
             static async (IGrainFactory grains, HttpRequest request, string url) =>
             {
@@ -49,8 +62,13 @@ public static class EndpointRouteBuilderExtensions
             })
             .WithName("Shorten")
             .WithOpenApi();
+    }
 
-        /// Go - redirect endpoint
+    /// <summary>
+    /// Go - redirect endpoint
+    /// </summary>
+    public static void MapGetGo(this IEndpointRouteBuilder builder)
+    {
         builder.MapGet("/go/{shortenedRouteSegment:required}",
             static async (IGrainFactory grains, string shortenedRouteSegment) =>
             {

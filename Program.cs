@@ -1,6 +1,5 @@
 using Orleans.Runtime;
-using OrleansURLShortener.Interfaces;
-using OrleansURLShortener.Extensions;
+using OrleansURLShortener.Router;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +23,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+var router = new Router(app);
+
 // Map the endpoints
-app.MapGetEndpoints();
+router.MapEndpoints();
 
 app.Run();
