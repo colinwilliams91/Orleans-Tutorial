@@ -1,5 +1,11 @@
 # OrleansURLShortener
 
+## To Use
+1. Start the app using the run button at the top of Visual Studio. The app should launch in the browser and display the familiar Hello world! text.
+2. In the browser address bar, test the shorten endpoint by entering a URL path such as {localhost}/shorten?url=https://learn.microsoft.com. The page should reload and provide a shortened URL. Copy the shortened URL to your clipboard.
+https://learn.microsoft.com/en-us/dotnet/orleans/media/url-shortener.png
+3. Paste the shortened URL into the address bar and press enter. The page should reload and redirect you to https://learn.microsoft.com.
+
 ## API Documentation
 ```
 - Generated OpenAPI Specification JSON documentation describing endpoints:
