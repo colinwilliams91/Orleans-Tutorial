@@ -1,4 +1,5 @@
-﻿using OrleansURLShortener.Interfaces;
+﻿using OrleansURLShortener.Extensions;
+using OrleansURLShortener.Interfaces;
 
 namespace OrleansURLShortener.Router
 {
@@ -8,11 +9,6 @@ namespace OrleansURLShortener.Router
     /// </summary>
     public class Router
     {
-        //public IGetEndpointMapper GetEndpointMapper { get; set; }
-        //public void Router(IGetEndpointMapper getEndpointMapper)
-        //{
-        //    this.GetEndpointMapper = getEndpointMapper;
-        //}
         public required IEndpointRouteBuilder App {  get; set; }
 
         public Router(IEndpointRouteBuilder app)
@@ -20,9 +16,7 @@ namespace OrleansURLShortener.Router
             this.App = app;
         }
 
-        //public static void MapGetHome(this IEndpointRouteBuilder builder)
-        //{
-
-        //}
+        // TODO? these could just be called on the DI "app" inside CTOR and not need properties or methods?
+        public void MapEndpoints() => this.App.MapGetEndpoints();
     }
 }
