@@ -11,7 +11,14 @@ public class Router(WebApplication app)
 
     public void MapEndpoints()
     {
-        this.App.MapGetEndpoints();
+        this.MapGetEndpoints();
         // TODO: MapPostEndpoints, MapPutEndpoints, MapDeleteEndpoints...
+    }
+
+    public void MapGetEndpoints()
+    {
+        this.App.MapGetHome();
+        this.App.MapGetShorten();
+        this.App.MapGetGo();
     }
 }

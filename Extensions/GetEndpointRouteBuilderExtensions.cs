@@ -5,17 +5,7 @@ namespace OrleansURLShortener.Extensions;
 public static class GetEndpointRouteBuilderExtensions
 {
     /// <summary>
-    /// Maps all the Get endpoints extending IEndpointRouteBuider which is inherited by WebApplication "app"
-    /// </summary>
-    public static void MapGetEndpoints(this IEndpointRouteBuilder builder)
-    {
-        MapGetHome(builder);
-        MapGetShorten(builder);
-        MapGetGo(builder);
-    }
-
-    /// <summary>
-    /// Home - landing screen endpoint
+    /// Home Endpoint - landing screen endpoint
     /// </summary>
     public static void MapGetHome(this IEndpointRouteBuilder builder)
     {
@@ -25,7 +15,7 @@ public static class GetEndpointRouteBuilderExtensions
     }
 
     /// <summary>
-    /// Shorten - creates and stores version of provided URL
+    /// Shorten Endpoint - creates or gets, and stores version of provided URL in grain state
     /// </summary>
     public static void MapGetShorten(this IEndpointRouteBuilder builder)
     {
@@ -65,7 +55,7 @@ public static class GetEndpointRouteBuilderExtensions
     }
 
     /// <summary>
-    /// Go - redirect endpoint
+    /// Go Endpoint - gets full url by short code grain state and redirects
     /// </summary>
     public static void MapGetGo(this IEndpointRouteBuilder builder)
     {
