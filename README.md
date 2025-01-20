@@ -6,7 +6,7 @@
  
 ![image](https://github.com/user-attachments/assets/879c67e7-a7b6-401f-92f8-440306fabcc5)
 
-4. Paste the shortened URL into the address bar and press enter. The page should reload and redirect you to https://learn.microsoft.com.
+3. Paste the shortened URL into the address bar and press enter. The page should reload and redirect you to https://learn.microsoft.com.
 
 ## API Documentation
 ```
