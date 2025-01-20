@@ -2,7 +2,7 @@
 
 namespace OrleansURLShortener.Extensions;
 
-public static class EndpointRouteBuilderExtensions
+public static class GetEndpointRouteBuilderExtensions
 {
     /// <summary>
     /// Maps all the Get endpoints extending IEndpointRouteBuider which is inherited by WebApplication "app"
