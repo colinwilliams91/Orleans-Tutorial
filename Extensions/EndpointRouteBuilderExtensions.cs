@@ -2,6 +2,7 @@
 
 namespace OrleansURLShortener.Extensions;
 
+// TODO: this could be refactored to 3 (or n methods...) and all called inside the Router class CTOR or 1 "CRUDMapper method"
 public static class EndpointRouteBuilderExtensions
 {
     /// <summary>
@@ -21,8 +22,7 @@ public static class EndpointRouteBuilderExtensions
                 var host = $"{request.Scheme}://{request.Host.Value}";
 
                 // Validate the URL query string.
-                if (string.IsNullOrWhiteSpace(url) ||
-                    Uri.IsWellFormedUriString(url, UriKind.Absolute) is false)
+                if (string.IsNullOrWhiteSpace(url) || !Uri.IsWellFormedUriString(url, UriKind.Absolute))
                 {
                     return Results.BadRequest($"""
                         The URL query string is required and needs to be well formed.
